@@ -51,6 +51,18 @@ public class Directory extends FSElement {
 		}
 		return fileList;
 	}
+	
+	public LinkedList<Link> getLinks()
+	{
+		for(FSElement element : getChildren())
+		{
+			if(element.isLink())
+			{
+				linkList.add((Link) element);
+			}
+		}
+		return linkList;
+	}
 
 	public int getTotalSize()
 	{
@@ -77,18 +89,6 @@ public class Directory extends FSElement {
 	public boolean isLink()
 	{
 		return false;
-	}
-	
-	public LinkedList<Link> getLinks()
-	{
-		for(FSElement element : getChildren())
-		{
-			if(element.isLink())
-			{
-				linkList.add((Link) element);
-			}
-		}
-		return linkList;
 	}
 
 }
