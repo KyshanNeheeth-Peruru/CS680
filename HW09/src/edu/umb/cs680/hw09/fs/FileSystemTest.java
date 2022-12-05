@@ -10,9 +10,9 @@ class FileSystemTest {
 	
 	Directory root = new Directory(null, "root", 0, localTime);
 	Directory apps = new Directory(root, "apps", 0, localTime);
-	Directory bin = new Directory(root, "lib", 0, localTime);
+	Directory bin = new Directory(root, "bin", 0, localTime);
 	Directory home = new Directory(root, "home", 0, localTime);
-	Directory pictures = new Directory(home, "code", 0, localTime);
+	Directory pictures = new Directory(home, "pictures", 0, localTime);
 	
 	File x = new File(apps, "x", 1, localTime);
 	File y = new File(bin, "y", 2, localTime);
