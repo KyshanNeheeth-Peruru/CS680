@@ -9,10 +9,10 @@ class SecurityContextTest {
 
 	@Test
     public void checkStateInitial() {
-		SecurityContext ctx = SecurityContext.getInstance();
+		SecurityContext ctx1 = SecurityContext.getInstance();
 		State expected;
 		expected = LoggedOut.getInstance();
-		assertEquals(expected, ctx.getState());
+		assertEquals(expected, ctx1.getState());
 	}
 	
 	@Test
