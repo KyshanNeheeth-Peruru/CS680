@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="HW13">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/junit-jupiter-api_5.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-jupiter-engine_5.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-jupiter-migrationsupport_5.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-jupiter-params_5.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-commons_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-engine_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-launcher_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-runner_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-api_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-engine_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-commons_1.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/junit-vintage-engine_5.9.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.opentest4j_1.2.0.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.apiguardian.api_1.1.2.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="HW13.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.AlphabeticalComparatorTest.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.AlphabeticalComparatorTest.testGetChildren.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.AlphabeticalComparatorTest2.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DirectoryTest (4).classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.FileSystemTest (4).classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.FileTest (3).classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.LinkTest (2).classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ReverseAlphabeticalComparatorTest.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.SizeComparatorTest.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.TimeStampComparatorTest.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.TimeStampComparatorTest.testGetChildrenRoot.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.TimeStampComparatorTest2.classpath">
+        <path refid="HW13.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="HW13.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AlphabeticalComparatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.AlphabeticalComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.AlphabeticalComparatorTest.classpath"/>
+        </junit>
+    </target>
+    <target name="AlphabeticalComparatorTest.testGetChildren">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.AlphabeticalComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.AlphabeticalComparatorTest.testGetChildren.classpath"/>
+        </junit>
+    </target>
+    <target name="AlphabeticalComparatorTest2">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.AlphabeticalComparatorTest2" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.AlphabeticalComparatorTest2.classpath"/>
+        </junit>
+    </target>
+    <target name="DirectoryTest (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.DirectoryTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DirectoryTest (4).classpath"/>
+        </junit>
+    </target>
+    <target name="FileSystemTest (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.FileSystemTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.FileSystemTest (4).classpath"/>
+        </junit>
+    </target>
+    <target name="FileTest (3)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.FileTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.FileTest (3).classpath"/>
+        </junit>
+    </target>
+    <target name="LinkTest (2)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.LinkTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LinkTest (2).classpath"/>
+        </junit>
+    </target>
+    <target name="ReverseAlphabeticalComparatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.ReverseAlphabeticalComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ReverseAlphabeticalComparatorTest.classpath"/>
+        </junit>
+    </target>
+    <target name="SizeComparatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.SizeComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.SizeComparatorTest.classpath"/>
+        </junit>
+    </target>
+    <target name="TimeStampComparatorTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.TimeStampComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TimeStampComparatorTest.classpath"/>
+        </junit>
+    </target>
+    <target name="TimeStampComparatorTest.testGetChildrenRoot">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.TimeStampComparatorTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TimeStampComparatorTest.testGetChildrenRoot.classpath"/>
+        </junit>
+    </target>
+    <target name="TimeStampComparatorTest2">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw13.TimeStampComparatorTest2" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TimeStampComparatorTest2.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
