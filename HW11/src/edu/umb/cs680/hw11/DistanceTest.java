@@ -49,8 +49,8 @@ class DistanceTest {
 
 	@Test
 	public void testP4P5Chebyshev() {
-		double expected = 1.0;
-		double actual = Distance.get(p1, p2, new Chebyshev());
+		double expected = 4.0;
+		double actual = Distance.get(p4, p5, new Chebyshev());
 		assertEquals(expected, actual);
 	}
 
