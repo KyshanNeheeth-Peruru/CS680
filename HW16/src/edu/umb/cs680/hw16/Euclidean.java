@@ -1,0 +1,15 @@
+package edu.umb.cs680.hw16;
+
+import java.util.List;
+
+public class Euclidean implements DistanceMetric {
+	public double distance(List<Double> p1, List<Double> p2) 
+	{
+		double sum = 0;
+		for(int i=0; i < p1.size(); i++) 
+		{
+			sum += Math.pow( p1.get(i)-p2.get(i), 2 );
+		}
+		return Math.sqrt(sum);		
+	}
+}
