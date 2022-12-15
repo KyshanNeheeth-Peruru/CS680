@@ -1,4 +1,4 @@
-package edu.umb.cs680.hw09.fs.util;
+package src.edu.umb.cs680.hw09;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import edu.umb.cs680.hw09.fs.Directory;
 import edu.umb.cs680.hw09.fs.File;
 import edu.umb.cs680.hw09.fs.Link;
+import edu.umb.cs680.hw09.fs.util.FileCrawlingVisitor;
 
 class FileCrawlingVisitorTest {
 	static LocalDateTime localTime = LocalDateTime.now();
