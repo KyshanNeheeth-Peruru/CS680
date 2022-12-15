@@ -1,11 +1,12 @@
-package edu.umb.cs680.hw07;
+package src.edu.umb.cs680.hw07;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw07.Directory;
+import edu.umb.cs680.hw07.File;
 
-class FileTest {
-
+class DirectoryTest {
 	static LocalDateTime localTime = LocalDateTime.now();
 	
 	Directory root = new Directory(null, "root", 0, localTime);
@@ -118,5 +119,56 @@ class FileTest {
 		String[] expected7 = {"d","7","home"};
 		File actual7 = d;
 		assertArrayEquals(expected7, fileToStringArray(actual7));
+	}
+	
+	@Test
+	public void testGetChildren() {
+		assertEquals(apps,root.getChildren().get(0));
+		assertEquals(lib,root.getChildren().get(1));
+		assertEquals(home,root.getChildren().get(2));
+		assertEquals(code,home.getChildren().get(0));
+		assertEquals(x,apps.getChildren().get(0));
+		assertEquals(y,apps.getChildren().get(1));
+		assertEquals(z,lib.getChildren().get(0));
+		assertEquals(d,home.getChildren().get(1));
+		assertEquals(a,code.getChildren().get(0));
+		assertEquals(b,code.getChildren().get(1));
+		assertEquals(c,code.getChildren().get(2));
+	}
+	
+	@Test
+	public void testCountChildren() {
+		assertEquals(3,root.countChildren());
+		assertEquals(2,apps.countChildren());
+		assertEquals(1,lib.countChildren());
+		assertEquals(2,home.countChildren());
+		assertEquals(3,code.countChildren());
+	}
+	
+	@Test
+	public void testGetTotalSize() {
+		assertEquals(28,root.getTotalSize());
+		assertEquals(22,home.getTotalSize());
+		assertEquals(3,apps.getTotalSize());
+		assertEquals(15,code.getTotalSize());
+	}
+	
+	@Test
+	public void testGetSubDirectories() {
+		assertSame("apps",root.getSubDirectories().get(0).getName());
+		assertSame("lib",root.getSubDirectories().get(1).getName());
+		assertSame("home",root.getSubDirectories().get(2).getName());
+		assertSame("code",home.getSubDirectories().get(0).getName());
+	}
+	
+	@Test
+	public void testGetFiles() {
+		assertSame("x",apps.getFiles().get(0).getName());
+		assertSame("y",apps.getFiles().get(1).getName());
+		assertSame("z",lib.getFiles().get(0).getName());
+		assertSame("a",code.getFiles().get(0).getName());
+		assertSame("b",code.getFiles().get(1).getName());
+		assertSame("c",code.getFiles().get(2).getName());
+		assertSame("d",home.getFiles().get(0).getName());
 	}
 }
