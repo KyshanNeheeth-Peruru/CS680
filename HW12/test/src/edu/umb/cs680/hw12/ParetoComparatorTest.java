@@ -1,10 +1,11 @@
-package edu.umb.cs680.hw12;
+package src.edu.umb.cs680.hw12;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw12.Car;
+import edu.umb.cs680.hw12.ParetoComparator;
 
 class ParetoComparatorTest {
 	ArrayList<Car> ListOfCars = new ArrayList<Car>();

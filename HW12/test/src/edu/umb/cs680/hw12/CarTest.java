@@ -1,7 +1,8 @@
-package edu.umb.cs680.hw12;
+package src.edu.umb.cs680.hw12;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw12.Car;
 
 
 class CarTest {

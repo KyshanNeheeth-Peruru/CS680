@@ -1,9 +1,11 @@
-package edu.umb.cs680.hw12;
+package src.edu.umb.cs680.hw12;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Collections;
 import java.util.LinkedList;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw12.Car;
+import edu.umb.cs680.hw12.MileageComparator;
 
 class MileageComparatorTest {
 	LinkedList<Car> carList = new LinkedList<Car>();
