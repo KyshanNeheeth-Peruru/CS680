@@ -10,32 +10,28 @@
     <property name="target" value="17"/>
     <property name="source" value="17"/>
     <path id="JUnit 5.libraryclasspath">
-        <pathelement location="../../.p2/pool/plugins/junit-jupiter-api_5.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-jupiter-engine_5.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-jupiter-migrationsupport_5.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-jupiter-params_5.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-commons_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-engine_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-launcher_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-runner_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-api_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-engine_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-platform-suite-commons_1.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/junit-vintage-engine_5.9.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.opentest4j_1.2.0.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.apiguardian.api_1.1.2.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
-        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-api_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-engine_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-migrationsupport_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-params_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-commons_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-engine_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-launcher_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-runner_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-api_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-engine_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-commons_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-vintage-engine_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.opentest4j_1.2.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.apiguardian.api_1.1.2.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
     </path>
     <path id="HW08.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
     <path id="run.DirectoryTest (1).classpath">
-        <path refid="HW08.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.LinkTest.classpath">
         <path refid="HW08.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
@@ -47,10 +43,20 @@
         <path refid="HW08.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
+    <path id="run.LinkTest.classpath">
+        <path refid="HW08.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
             <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -66,6 +72,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
+            <src path="test"/>
             <classpath refid="HW08.classpath"/>
         </javac>
     </target>
@@ -87,25 +94,16 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw08.DirectoryTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw08.DirectoryTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DirectoryTest (1).classpath"/>
-        </junit>
-    </target>
-    <target name="LinkTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw08.LinkTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.LinkTest.classpath"/>
         </junit>
     </target>
     <target name="FileSystemTest (1)">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw08.FileSystemTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw08.FileSystemTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.FileSystemTest (1).classpath"/>
         </junit>
@@ -114,9 +112,18 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw08.FileTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw08.FileTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.FileTest (1).classpath"/>
+        </junit>
+    </target>
+    <target name="LinkTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw08.LinkTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LinkTest.classpath"/>
         </junit>
     </target>
     <target name="junitreport">

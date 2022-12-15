@@ -1,8 +1,12 @@
-package edu.umb.cs680.hw08;
+package src.edu.umb.cs680.hw08;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw08.Directory;
+import edu.umb.cs680.hw08.FSElement;
+import edu.umb.cs680.hw08.File;
+import edu.umb.cs680.hw08.Link;
 
 class LinkTest {
 	static LocalDateTime localTime = LocalDateTime.now();

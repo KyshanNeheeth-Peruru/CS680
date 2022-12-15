@@ -1,10 +1,13 @@
-package edu.umb.cs680.hw08;
+package src.edu.umb.cs680.hw08;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw08.Directory;
+import edu.umb.cs680.hw08.File;
+import edu.umb.cs680.hw08.Link;
 
-class FileTest {
+class DirectoryTest {
 	static LocalDateTime localTime = LocalDateTime.now();
 	
 	Directory root = new Directory(null, "root", 0, localTime);
@@ -68,5 +71,62 @@ class FileTest {
 		assertFalse(c.isLink());
 		assertTrue(d.isLink());
 		assertTrue(e.isLink());
+	}
+	
+	@Test
+	public void testGetChildren() {
+		assertEquals(apps,root.getChildren().get(0));
+		assertEquals(bin,root.getChildren().get(1));
+		assertEquals(home,root.getChildren().get(2));
+		assertEquals(pictures,home.getChildren().get(0));
+		assertEquals(x,apps.getChildren().get(0));
+		assertEquals(y,bin.getChildren().get(0));
+		assertEquals(pictures,home.getChildren().get(0));
+		assertEquals(c,home.getChildren().get(1));
+		assertEquals(a,pictures.getChildren().get(0));
+		assertEquals(b,pictures.getChildren().get(1));
+		assertEquals(d,root.getChildren().get(3));
+		assertEquals(e,root.getChildren().get(4));
+	}
+	
+	@Test
+	public void testCountChildren() {
+		assertEquals(5,root.countChildren());
+		assertEquals(1,apps.countChildren());
+		assertEquals(1,bin.countChildren());
+		assertEquals(2,home.countChildren());
+		assertEquals(2,pictures.countChildren());
+	}
+	
+	@Test
+	public void testGetTotalSize() {
+		assertEquals(14,root.getTotalSize());
+		assertEquals(11,home.getTotalSize());
+		assertEquals(7,pictures.getTotalSize());
+		assertEquals(2,bin.getTotalSize());
+		assertEquals(1,apps.getTotalSize());
+	}
+	
+	@Test
+	public void testGetSubDirectories() {
+		assertSame("apps",root.getSubDirectories().get(0).getName());
+		assertSame("bin",root.getSubDirectories().get(1).getName());
+		assertSame("home",root.getSubDirectories().get(2).getName());
+		assertSame("pictures",home.getSubDirectories().get(0).getName());
+	}
+	
+	@Test
+	public void testGetFiles() {
+		assertSame("x",apps.getFiles().get(0).getName());
+		assertSame("y",bin.getFiles().get(0).getName());
+		assertSame("a",pictures.getFiles().get(0).getName());
+		assertSame("b",pictures.getFiles().get(1).getName());
+		assertSame("c",home.getFiles().get(0).getName());
+	}
+	
+	@Test
+	public void testGetLinks() {
+		assertSame("d",root.getLinks().get(0).getName());
+		assertSame("e",root.getLinks().get(1).getName());
 	}
 }
