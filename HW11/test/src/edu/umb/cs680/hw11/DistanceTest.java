@@ -1,4 +1,4 @@
-package edu.umb.cs680.hw11;
+package src.edu.umb.cs680.hw11;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
@@ -6,6 +6,10 @@ import java.util.LinkedList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw11.Chebyshev;
+import edu.umb.cs680.hw11.Distance;
+import edu.umb.cs680.hw11.Euclidean;
+import edu.umb.cs680.hw11.Manhattan;
 
 class DistanceTest {
 	private static List<Double> p1, p2, p3, p4, p5;
