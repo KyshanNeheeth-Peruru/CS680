@@ -1,4 +1,4 @@
-package edu.umb.cs680.hw15;
+package src.edu.umb.cs680.hw15;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
@@ -6,6 +6,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw15.Directory;
+import edu.umb.cs680.hw15.FSElement;
+import edu.umb.cs680.hw15.File;
+import edu.umb.cs680.hw15.Link;
 
 
 class DirectoryTest {

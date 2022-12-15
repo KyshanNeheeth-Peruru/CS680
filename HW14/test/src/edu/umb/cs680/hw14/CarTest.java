@@ -1,13 +1,14 @@
-package edu.umb.cs680.hw14;
+package src.edu.umb.cs680.hw14;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw14.Car;
 
 class CarTest {
-	ArrayList<Car> CarList = new ArrayList<Car>();
+ArrayList<Car> CarList = new ArrayList<Car>();
 	
 	private String[] carToStringArray(Car car) {
 		String[] arr_car = {car.getMake(), car.getModel(), Integer.toString(car.getYear()),Integer.toString(car.getMileage()),Float.toString(car.getPrice())};
@@ -98,4 +99,5 @@ class CarTest {
         assertEquals(2020, CarList.get(0).getYear());
         assertEquals(2010, CarList.get(1).getYear());
     }
+
 }
