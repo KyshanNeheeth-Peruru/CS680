@@ -71,6 +71,12 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
     </target>
     <target name="clean">
         <delete dir="bin"/>
@@ -82,6 +88,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
+            <src path="test"/>
             <classpath refid="HW17.classpath"/>
         </javac>
     </target>
@@ -103,7 +110,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.LineChartObserverTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.LineChartObserverTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.LineChartObserverTest.classpath"/>
         </junit>
@@ -112,7 +119,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.Observer3DTest.test3DObserverChangeQuoteOnce.classpath"/>
         </junit>
@@ -121,7 +128,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.Observer3DTest.classpath"/>
         </junit>
@@ -130,7 +137,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.TableObserverTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.TableObserverTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.TableObserverTest.classpath"/>
         </junit>
@@ -139,7 +146,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ObservableTest.testLineChartObserverChangeQuoteOnce.classpath"/>
         </junit>
@@ -148,7 +155,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ObservableTest.classpath"/>
         </junit>
@@ -157,7 +164,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ObservableTest.testCountObserversAndClearObservers.classpath"/>
         </junit>
@@ -166,7 +173,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ObservableTest.testCountObserversAndClearObserversss.classpath"/>
         </junit>

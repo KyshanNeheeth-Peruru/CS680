@@ -71,6 +71,12 @@
                 <exclude name="**/*.java"/>
             </fileset>
         </copy>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="test">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
     </target>
     <target name="clean">
         <delete dir="bin"/>
@@ -82,6 +88,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
+            <src path="test"/>
             <classpath refid="HW16.classpath"/>
         </javac>
     </target>
@@ -103,7 +110,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest (1).classpath"/>
         </junit>
@@ -112,7 +119,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest.testDistanceMatrixMahattanUsingLE.classpath"/>
         </junit>
@@ -121,7 +128,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest.testP3P4Manhattan.classpath"/>
         </junit>
@@ -130,7 +137,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest.testP3P4ManhattanWithLE.classpath"/>
         </junit>
@@ -139,7 +146,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest.testPrac.classpath"/>
         </junit>
@@ -148,7 +155,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.DistanceTest.testPrac1.classpath"/>
         </junit>
@@ -157,7 +164,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.ChebyshevTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.ChebyshevTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ChebyshevTest (1).classpath"/>
         </junit>
@@ -166,7 +173,7 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
-            <test name="edu.umb.cs680.hw16.EuclideanTest" todir="${junit.output.dir}"/>
+            <test name="src.edu.umb.cs680.hw16.EuclideanTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.EuclideanTest (1).classpath"/>
         </junit>

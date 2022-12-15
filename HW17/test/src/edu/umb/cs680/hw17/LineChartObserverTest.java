@@ -1,7 +1,9 @@
-package edu.umb.cs680.hw17;
+package src.edu.umb.cs680.hw17;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw17.LineChartObserver;
+import edu.umb.cs680.hw17.StockQuoteObservable;
 
 class LineChartObserverTest {
 	StockQuoteObservable observable = new StockQuoteObservable();

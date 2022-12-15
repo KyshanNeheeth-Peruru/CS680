@@ -1,9 +1,10 @@
-package edu.umb.cs680.hw16;
+package src.edu.umb.cs680.hw16;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw16.Chebyshev;
 
 class ChebyshevTest {
 	
