@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="HW16">
+    <property environment="env"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="17"/>
+    <property name="source" value="17"/>
+    <path id="JUnit 5.libraryclasspath">
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-api_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-engine_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-migrationsupport_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-params_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-commons_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-engine_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-launcher_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-runner_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-api_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-engine_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-commons_1.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/junit-vintage-engine_5.9.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.opentest4j_1.2.0.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.apiguardian.api_1.1.2.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
+        <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="HW16.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest (1).classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest.testDistanceMatrixMahattanUsingLE.classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest.testP3P4Manhattan.classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest.testP3P4ManhattanWithLE.classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest.testPrac.classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.DistanceTest.testPrac1.classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.ChebyshevTest (1).classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.EuclideanTest (1).classpath">
+        <path refid="HW16.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="HW16.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="DistanceTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest (1).classpath"/>
+        </junit>
+    </target>
+    <target name="DistanceTest.testDistanceMatrixMahattanUsingLE">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest.testDistanceMatrixMahattanUsingLE.classpath"/>
+        </junit>
+    </target>
+    <target name="DistanceTest.testP3P4Manhattan">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest.testP3P4Manhattan.classpath"/>
+        </junit>
+    </target>
+    <target name="DistanceTest.testP3P4ManhattanWithLE">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest.testP3P4ManhattanWithLE.classpath"/>
+        </junit>
+    </target>
+    <target name="DistanceTest.testPrac">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest.testPrac.classpath"/>
+        </junit>
+    </target>
+    <target name="DistanceTest.testPrac1">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.DistanceTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DistanceTest.testPrac1.classpath"/>
+        </junit>
+    </target>
+    <target name="ChebyshevTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.ChebyshevTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ChebyshevTest (1).classpath"/>
+        </junit>
+    </target>
+    <target name="EuclideanTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw16.EuclideanTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.EuclideanTest (1).classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
