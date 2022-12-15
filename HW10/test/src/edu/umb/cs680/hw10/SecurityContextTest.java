@@ -1,7 +1,12 @@
-package edu.umb.cs680.hw10.fs;
+package src.edu.umb.cs680.hw10;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+
+import edu.umb.cs680.hw10.fs.LoggedIn;
+import edu.umb.cs680.hw10.fs.LoggedOut;
+import edu.umb.cs680.hw10.fs.SecurityContext;
+import edu.umb.cs680.hw10.fs.State;
 
 class SecurityContextTest {
 

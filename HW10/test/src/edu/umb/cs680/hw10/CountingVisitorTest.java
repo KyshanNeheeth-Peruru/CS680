@@ -1,9 +1,8 @@
-package edu.umb.cs680.hw10.fs.util;
+package src.edu.umb.cs680.hw10;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
-
 import edu.umb.cs680.hw10.fs.Directory;
 import edu.umb.cs680.hw10.fs.File;
 import edu.umb.cs680.hw10.fs.Link;
@@ -11,6 +10,7 @@ import edu.umb.cs680.hw10.fs.LoggedIn;
 import edu.umb.cs680.hw10.fs.LoggedOut;
 import edu.umb.cs680.hw10.fs.SecurityContext;
 import edu.umb.cs680.hw10.fs.State;
+import edu.umb.cs680.hw10.fs.util.CountingVisitor;
 
 
 class CountingVisitorTest {

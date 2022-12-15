@@ -1,8 +1,12 @@
-package edu.umb.cs680.hw10.fs;
+package src.edu.umb.cs680.hw10;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw10.fs.Directory;
+import edu.umb.cs680.hw10.fs.File;
+import edu.umb.cs680.hw10.fs.FileSystem;
+import edu.umb.cs680.hw10.fs.Link;
 
 
 class FileSystemTest {

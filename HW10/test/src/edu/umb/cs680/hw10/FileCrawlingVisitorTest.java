@@ -1,4 +1,4 @@
-package edu.umb.cs680.hw10.fs.util;
+package src.edu.umb.cs680.hw10;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,6 +12,7 @@ import edu.umb.cs680.hw10.fs.LoggedIn;
 import edu.umb.cs680.hw10.fs.LoggedOut;
 import edu.umb.cs680.hw10.fs.SecurityContext;
 import edu.umb.cs680.hw10.fs.State;
+import edu.umb.cs680.hw10.fs.util.FileCrawlingVisitor;
 
 class FileCrawlingVisitorTest {
 	static LocalDateTime localTime = LocalDateTime.now();
@@ -36,7 +37,7 @@ class FileCrawlingVisitorTest {
 		SecurityContext ctx = SecurityContext.getInstance();
 		State expected;
 		expected = LoggedOut.getInstance();
-		CountingVisitor v = new CountingVisitor();
+		FileCrawlingVisitor v = new FileCrawlingVisitor();
 		root.accept(v,ctx);
 		assertEquals(expected, ctx.getState());
 	}
