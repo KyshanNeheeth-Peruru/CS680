@@ -1,11 +1,14 @@
-package edu.umb.cs680.hw13;
+package src.edu.umb.cs680.hw13;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
+import edu.umb.cs680.hw13.Directory;
+import edu.umb.cs680.hw13.FSElement;
+import edu.umb.cs680.hw13.File;
+import edu.umb.cs680.hw13.Link;
 
-
-class FileTest {
+class LinkTest {
 	static LocalDateTime localTime = LocalDateTime.now();
 	
 	Directory root = new Directory(null, "root", 0, localTime);
@@ -69,5 +72,15 @@ class FileTest {
 		assertFalse(c.isLink());
 		assertTrue(d.isLink());
 		assertTrue(e.isLink());
+	}
+	
+	@Test
+	public void testGetTarget() {
+		Directory expecteddir = pictures;
+		File expectedFile = x;
+		FSElement dTarget = d.getTarget();
+		FSElement eTarget = e.getTarget();
+		assertSame(expecteddir, dTarget);
+		assertSame(expectedFile, eTarget);
 	}
 }
