@@ -1,319 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- WARNING: Eclipse auto-generated file.
-              Any modifications will be overwritten.
-              To include a user specific buildfile here, simply create one in the same
-              directory with the processing instruction <?eclipse.ant.import?>
-              as the first entry and export the buildfile again. --><project basedir="." default="build" name="HW10">
-    <property environment="env"/>
-    <property name="junit.output.dir" value="junit"/>
-    <property name="debuglevel" value="source,lines,vars"/>
-    <property name="target" value="17"/>
-    <property name="source" value="17"/>
-    <path id="JUnit 5.libraryclasspath">
-        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-api_5.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-engine_5.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-migrationsupport_5.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-jupiter-params_5.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-commons_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-engine_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-launcher_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-runner_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-api_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-engine_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-platform-suite-commons_1.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/junit-vintage-engine_5.9.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/org.opentest4j_1.2.0.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/org.apiguardian.api_1.1.2.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/org.junit_4.13.2.v20211018-1956.jar"/>
-        <pathelement location="../../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
-    </path>
-    <path id="HW10.classpath">
-        <pathelement location="bin"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.CountingVisitorTest (1).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.CountingVisitorTest.checkLoggedOut.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.CountingVisitorTest.testAfterLogin.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.CountingVisitorTest.testCoutorPictures.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.DirectoryTest (3).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileCrawlingVisitorTest (1).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileCrawlingVisitorTest.checkLoggedOut.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorBin.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorRoot.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileSearchVisitorTest (1).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileSystemTest (3).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.FileTest (5).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.LinkTest (4).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.SecurityContextTest (1).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.SecurityContextTest.checkStateeAfterLoginandLogoutandLogin.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.SecurityContextTest.checkStateInitial.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.SecurityContextTest.checkStateInitiall.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.SecurityContextTest.testStateAfterLoginandLogoutandLogin.classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <target name="init">
-        <mkdir dir="bin"/>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="src">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-        <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test/src">
-                <exclude name="**/*.launch"/>
-                <exclude name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="clean">
-        <delete dir="bin"/>
-    </target>
-    <target depends="clean" name="cleanall"/>
-    <target depends="build-subprojects,build-project" name="build"/>
-    <target name="build-subprojects"/>
-    <target depends="init" name="build-project">
-        <echo message="${ant.project.name}: ${ant.file}"/>
-        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
-            <src path="src"/>
-            <src path="test/src"/>
-            <classpath refid="HW10.classpath"/>
-        </javac>
-    </target>
-    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
-    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
-        <copy todir="${ant.library.dir}">
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </copy>
-        <unzip dest="${ant.library.dir}">
-            <patternset includes="jdtCompilerAdapter.jar"/>
-            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
-        </unzip>
-    </target>
-    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
-        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
-        <antcall target="build"/>
-    </target>
-    <target name="CountingVisitorTest (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.CountingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.CountingVisitorTest (1).classpath"/>
-        </junit>
-    </target>
-    <target name="CountingVisitorTest.checkLoggedOut">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.CountingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.CountingVisitorTest.checkLoggedOut.classpath"/>
-        </junit>
-    </target>
-    <target name="CountingVisitorTest.testAfterLogin">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.CountingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.CountingVisitorTest.testAfterLogin.classpath"/>
-        </junit>
-    </target>
-    <target name="CountingVisitorTest.testCoutorPictures">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.CountingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.CountingVisitorTest.testCoutorPictures.classpath"/>
-        </junit>
-    </target>
-    <target name="DirectoryTest (3)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.DirectoryTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.DirectoryTest (3).classpath"/>
-        </junit>
-    </target>
-    <target name="FileCrawlingVisitorTest (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileCrawlingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileCrawlingVisitorTest (1).classpath"/>
-        </junit>
-    </target>
-    <target name="FileCrawlingVisitorTest.checkLoggedOut">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileCrawlingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileCrawlingVisitorTest.checkLoggedOut.classpath"/>
-        </junit>
-    </target>
-    <target name="FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorBin">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileCrawlingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorBin.classpath"/>
-        </junit>
-    </target>
-    <target name="FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorRoot">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileCrawlingVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileCrawlingVisitorTest.testAfterLoginFileCrawlingVistorRoot.classpath"/>
-        </junit>
-    </target>
-    <target name="FileSearchVisitorTest (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileSearchVisitorTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileSearchVisitorTest (1).classpath"/>
-        </junit>
-    </target>
-    <target name="FileSystemTest (3)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileSystemTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileSystemTest (3).classpath"/>
-        </junit>
-    </target>
-    <target name="FileTest (5)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileTest (5).classpath"/>
-        </junit>
-    </target>
-    <target name="LinkTest (4)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.LinkTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.LinkTest (4).classpath"/>
-        </junit>
-    </target>
-    <target name="SecurityContextTest (1)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.SecurityContextTest (1).classpath"/>
-        </junit>
-    </target>
-    <target name="SecurityContextTest.checkStateeAfterLoginandLogoutandLogin">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.SecurityContextTest.checkStateeAfterLoginandLogoutandLogin.classpath"/>
-        </junit>
-    </target>
-    <target name="SecurityContextTest.checkStateInitial">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.SecurityContextTest.checkStateInitial.classpath"/>
-        </junit>
-    </target>
-    <target name="SecurityContextTest.checkStateInitiall">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.SecurityContextTest.checkStateInitiall.classpath"/>
-        </junit>
-    </target>
-    <target name="SecurityContextTest.testStateAfterLoginandLogoutandLogin">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.SecurityContextTest.testStateAfterLoginandLogoutandLogin.classpath"/>
-        </junit>
-    </target>
-    <target name="junitreport">
-        <junitreport todir="${junit.output.dir}">
-            <fileset dir="${junit.output.dir}">
-                <include name="TEST-*.xml"/>
-            </fileset>
-            <report format="frames" todir="${junit.output.dir}"/>
-        </junitreport>
+<project name="hw10-junit5-ivy" basedir="."  default="clean" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<property name="src" location="src" />
+	<property name="bin" location="bin" />
+	<property name="test.src" location="test/src" />
+	<property name="test.bin" location="test/bin" />
+	<property name="ivy.lib" location="lib"/>
+	
+	<path id="classpath">
+		<pathelement location="${bin}" />
+		<pathelement location="${test.bin}" />
+		<fileset dir="${ivy.lib}"/>
+	</path>
+	
+	<target name="init">
+		<mkdir dir="${bin}"/>
+		<mkdir dir="${test.bin}"/>
+		<mkdir dir="test/reports"/>
+		<mkdir dir="${ivy.lib}"/>
+		<echo message="CLASSPATH: ${toString:classpath}" />
+	</target>
+	
+	<target name="resolve" depends="init"
+			description="--> Download JAR files (listed in ivy.xml) to the 'lib' directory.">
+		<ivy:retrieve/>
+	</target>
+	
+	<target name="compile" depends="resolve">
+		<javac srcdir="${src}" destdir="${bin}" includeAntRuntime="no">
+			<classpath refid="classpath"/>
+			<include name="edu/umb/cs680/hw10/fs/*.java"/>
+			<include name="edu/umb/cs680/hw10/fs/util/*.java"/>
+
+		</javac>
+		<javac srcdir="${test.src}" destdir="${test.bin}" includeAntRuntime="no"> 
+			<classpath refid="classpath"/>
+			<include name="edu/umb/cs680/hw10/*.java"/>
+
+		</javac>
+	</target>
+
+	<target name="test" depends="compile">
+	
+		<junitlauncher haltOnFailure="true" printSummary="true">		
+			<classpath refid="classpath" />
+			<testclasses outputdir="test">
+				<fileset dir="${test.bin}">
+					<include name="edu/umb/cs680/hw10/*Test.class"/>
+				</fileset>
+				<listener type="legacy-plain" sendSysOut="true"/>
+	        </testclasses>
+		</junitlauncher>
+	</target>
+	
+	<target name="run" depends="test">
+		<java classname="edu.umb.cs680.hw10.fs.FileSystem"
+				classpathref="classpath"  
+				fork="true"/>
+	</target>
+	
+	<target name="clean" depends="run">
+		<delete includeemptydirs="true">
+			<fileset dir="${bin}/edu/umb/cs680/hw10" includes="**/*"/>
+			<fileset dir="${test.bin}/edu/umb/cs680/hw10" includes="**/*"/>
+		</delete>
+	</target>
+	
+    <target name="clean-cache" 
+    		description="--> clean the ivy cache (by default ~/.ivy2/cache)">
+        <ivy:cleancache/>
     </target>
 </project>
