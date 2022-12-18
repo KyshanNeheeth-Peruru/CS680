@@ -35,22 +35,6 @@
         <path refid="HW17.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
-    <path id="run.Observer3DTest.test3DObserverChangeQuoteOnce.classpath">
-        <path refid="HW17.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.Observer3DTest.classpath">
-        <path refid="HW17.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.TableObserverTest.classpath">
-        <path refid="HW17.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.ObservableTest.testLineChartObserverChangeQuoteOnce.classpath">
-        <path refid="HW17.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
     <path id="run.ObservableTest.classpath">
         <path refid="HW17.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
@@ -63,6 +47,26 @@
         <path refid="HW17.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
+    <path id="run.ObservableTest.testLineChartObserverChangeQuoteOnce.classpath">
+        <path refid="HW17.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.Observer3DTest.classpath">
+        <path refid="HW17.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.Observer3DTest.test3DObserverChangeQuoteOnce.classpath">
+        <path refid="HW17.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.TableObserverTest.classpath">
+        <path refid="HW17.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.LineChartObserverTest (1).classpath">
+        <path refid="HW17.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -72,7 +76,7 @@
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test">
+            <fileset dir="test/src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -88,7 +92,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <src path="test"/>
+            <src path="test/src"/>
             <classpath refid="HW17.classpath"/>
         </javac>
     </target>
@@ -113,42 +117,6 @@
             <test name="src.edu.umb.cs680.hw17.LineChartObserverTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.LineChartObserverTest.classpath"/>
-        </junit>
-    </target>
-    <target name="Observer3DTest.test3DObserverChangeQuoteOnce">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.Observer3DTest.test3DObserverChangeQuoteOnce.classpath"/>
-        </junit>
-    </target>
-    <target name="Observer3DTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.Observer3DTest.classpath"/>
-        </junit>
-    </target>
-    <target name="TableObserverTest">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw17.TableObserverTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.TableObserverTest.classpath"/>
-        </junit>
-    </target>
-    <target name="ObservableTest.testLineChartObserverChangeQuoteOnce">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.ObservableTest.testLineChartObserverChangeQuoteOnce.classpath"/>
         </junit>
     </target>
     <target name="ObservableTest">
@@ -176,6 +144,51 @@
             <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.ObservableTest.testCountObserversAndClearObserversss.classpath"/>
+        </junit>
+    </target>
+    <target name="ObservableTest.testLineChartObserverChangeQuoteOnce">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw17.ObservableTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.ObservableTest.testLineChartObserverChangeQuoteOnce.classpath"/>
+        </junit>
+    </target>
+    <target name="Observer3DTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Observer3DTest.classpath"/>
+        </junit>
+    </target>
+    <target name="Observer3DTest.test3DObserverChangeQuoteOnce">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw17.Observer3DTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.Observer3DTest.test3DObserverChangeQuoteOnce.classpath"/>
+        </junit>
+    </target>
+    <target name="TableObserverTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw17.TableObserverTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.TableObserverTest.classpath"/>
+        </junit>
+    </target>
+    <target name="LineChartObserverTest (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw17.LineChartObserverTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LineChartObserverTest (1).classpath"/>
         </junit>
     </target>
     <target name="junitreport">

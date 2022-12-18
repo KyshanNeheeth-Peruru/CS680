@@ -56,7 +56,7 @@
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test">
+            <fileset dir="test/src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -72,7 +72,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <src path="test"/>
+            <src path="test/src"/>
             <classpath refid="HW14.classpath"/>
         </javac>
     </target>

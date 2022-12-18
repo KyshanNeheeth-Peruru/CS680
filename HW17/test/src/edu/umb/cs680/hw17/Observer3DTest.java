@@ -1,4 +1,4 @@
-package src.edu.umb.cs680.hw17;
+package edu.umb.cs680.hw17;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;

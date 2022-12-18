@@ -75,6 +75,14 @@
         <path refid="HW10.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
+    <path id="run.FileTest (5).classpath">
+        <path refid="HW10.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
+    <path id="run.LinkTest (4).classpath">
+        <path refid="HW10.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
     <path id="run.SecurityContextTest (1).classpath">
         <path refid="HW10.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
@@ -95,14 +103,6 @@
         <path refid="HW10.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
-    <path id="run.FileTest (5).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
-    <path id="run.LinkTest (4).classpath">
-        <path refid="HW10.classpath"/>
-        <path refid="JUnit 5.libraryclasspath"/>
-    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -112,7 +112,7 @@
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test">
+            <fileset dir="test/src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -128,7 +128,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <src path="test"/>
+            <src path="test/src"/>
             <classpath refid="HW10.classpath"/>
         </javac>
     </target>
@@ -245,6 +245,24 @@
             <classpath refid="run.FileSystemTest (3).classpath"/>
         </junit>
     </target>
+    <target name="FileTest (5)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw10.FileTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.FileTest (5).classpath"/>
+        </junit>
+    </target>
+    <target name="LinkTest (4)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="src.edu.umb.cs680.hw10.LinkTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.LinkTest (4).classpath"/>
+        </junit>
+    </target>
     <target name="SecurityContextTest (1)">
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
@@ -288,24 +306,6 @@
             <test name="src.edu.umb.cs680.hw10.SecurityContextTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.SecurityContextTest.testStateAfterLoginandLogoutandLogin.classpath"/>
-        </junit>
-    </target>
-    <target name="FileTest (5)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.FileTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.FileTest (5).classpath"/>
-        </junit>
-    </target>
-    <target name="LinkTest (4)">
-        <mkdir dir="${junit.output.dir}"/>
-        <junit fork="yes" printsummary="withOutAndErr">
-            <formatter type="xml"/>
-            <test name="src.edu.umb.cs680.hw10.LinkTest" todir="${junit.output.dir}"/>
-            <jvmarg line="-ea"/>
-            <classpath refid="run.LinkTest (4).classpath"/>
         </junit>
     </target>
     <target name="junitreport">

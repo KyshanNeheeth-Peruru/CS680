@@ -59,6 +59,10 @@
         <path refid="HW07.classpath"/>
         <path refid="JUnit 5.libraryclasspath"/>
     </path>
+    <path id="run.DirectoryTest (6).classpath">
+        <path refid="HW07.classpath"/>
+        <path refid="JUnit 5.libraryclasspath"/>
+    </path>
     <target name="init">
         <mkdir dir="bin"/>
         <copy includeemptydirs="false" todir="bin">
@@ -68,7 +72,7 @@
             </fileset>
         </copy>
         <copy includeemptydirs="false" todir="bin">
-            <fileset dir="test">
+            <fileset dir="test/src">
                 <exclude name="**/*.launch"/>
                 <exclude name="**/*.java"/>
             </fileset>
@@ -84,7 +88,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
             <src path="src"/>
-            <src path="test"/>
+            <src path="test/src"/>
             <classpath refid="HW07.classpath"/>
         </javac>
     </target>
@@ -163,6 +167,15 @@
             <test name="src.edu.umb.cs680.hw07.FileTest" todir="${junit.output.dir}"/>
             <jvmarg line="-ea"/>
             <classpath refid="run.FileTest.classpath"/>
+        </junit>
+    </target>
+    <target name="DirectoryTest (6)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="edu.umb.cs680.hw07.DirectoryTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="run.DirectoryTest (6).classpath"/>
         </junit>
     </target>
     <target name="junitreport">

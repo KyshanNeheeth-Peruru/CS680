@@ -1,4 +1,4 @@
-package src.edu.umb.cs680.hw09;
+package edu.umb.cs680.hw09;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.time.LocalDateTime;

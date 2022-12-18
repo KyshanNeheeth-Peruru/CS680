@@ -1,4 +1,4 @@
-package src.edu.umb.cs680.hw16;
+package edu.umb.cs680.hw16;
 
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Arrays;
