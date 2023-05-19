@@ -3,35 +3,31 @@ package edu.umb.cs680.hw17;
 import java.util.LinkedList;
 import java.util.List;
 
-public abstract class Observable<StockEvent> {
-	private LinkedList<Observer<StockEvent>> observers = new LinkedList<>();
+public abstract class Observable<T> {
+	private LinkedList<Observer<T>> observers = new LinkedList<>();
 	
-	public Observable() {
-		observers = new LinkedList<Observer<StockEvent>>();
-	}
-	
-	public void addObserver(Observer<StockEvent> o) {
+	public void addObserver(Observer<T> o) {
 		observers.add(o);
 	}
-	
-	public void removeObserver(Observer<StockEvent> o) {
-		observers.remove(o);
-	}
-	
-	public int countObservers() {
-		return observers.size();	
-	}
 
-	public List<Observer<StockEvent>> getObservers(){
+	public void clearObservers() {
+		observers.clear();
+		
+	}
+	public List<Observer<T>> getObservers(){
 		return observers;
 	}
 	
-	public void clearObservers() {
-		observers.clear();
+	public int countObservers() {
+		return observers.size();
+		
+	}
+	public void removeObserver(Observer<T> o) {
+		observers.remove(o);
 	}
 
-	public void notifyObservers(StockEvent event) {
+	public void notifyObservers(T event) {
 		observers.forEach( (observer)->{observer.update(this, event);} );
 	}
-
+	
 }
