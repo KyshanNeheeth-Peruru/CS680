@@ -16,5 +16,4 @@ public class StockEvent {
 	public double getQuote() {
 		return quote;
 	}
-
 }
